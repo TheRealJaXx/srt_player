@@ -42,7 +42,7 @@ class SrtReceiver(
             s.listen(1)
             while (running) {
                 onStatus("Waiting for stream")
-                val (client, _) = s.accept()
+                val client = s.accept().first
                 onStatus("Connected")
                 val session = Session()
                 onSession(session)
